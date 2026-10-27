@@ -1,0 +1,5 @@
+Server_A: OK
+Server_B: CRITICAL
+Server_C: OK
+Server_D: WARNING
+Server_E: OK
