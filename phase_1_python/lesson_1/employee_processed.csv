@@ -1,0 +1,5 @@
+id,name,department,salary,bonus,status,email
+1,John Doe,Engineering,78750.0,7875.0,Senior,john.doe@opay.com
+2,Jane Smith,Marketing,68250.0,6825.0,Junior,jane.smith@opay.com
+3,Michael Johnson,Engineering,84000.0,8400.0,Senior,michael.johnson@opay.com
+5,Michael Brown,Marketing,71400.0,7140.0,Junior,michael.brown@opay.com
