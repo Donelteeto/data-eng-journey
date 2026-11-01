@@ -1,0 +1,4 @@
+id,customer_name,age,purchase_amount,country,is_premium
+1,John Doe,25.0,150.5,US,False
+5,Eve Davis,35.0,75.5,CA,False
+7,David Lee,40.0,500.0,US,True
