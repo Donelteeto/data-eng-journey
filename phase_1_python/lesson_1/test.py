@@ -13,14 +13,14 @@ result = calculate(5, 5)
 print(result)
 '''
 
-try:
+'''try:
     number = int("Hello")
     raise Exception("Simulated crash")
 except Exception:
     print("Caught an error")
 finally:
     print("This always runs")
-
+'''
 def process_customer(customer):
     if "email" not in customer:
         # I am manually triggering an error here
