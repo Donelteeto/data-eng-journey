@@ -14,8 +14,8 @@ print("-"*40)
 
 # Filtering Sales above 100000
 print("-"*3+" "+"Filtering Columns"+" "+"-"*3)
-high_sales = df[df["Sales"] > 100000]
-print(high_sales)
+big_sales = df[df["Sales"] > 100000]
+print(big_sales)
 print("-"*40)
 
 # Filtering both Sales and Profit
@@ -39,17 +39,64 @@ print("-"*40)
 
 # Calculating total sales after sorting
 print("-"*3+" "+"Total Sales"+" "+"-"*3)
-total_sales = new_sort[["Sales"]]
-print(total_sales.sum())
+total_sales = df["Sales"].sum()
+print(total_sales)
 print("-"*40)
 
-# Calculating maximum salary
-print("-"*3+" "+"Maximum Salary"+" "+"-"*3)
-max_salary = new_sort[["Sales"]].max()
-print(max_salary)
+# Calculating maximum sales
+print("-"*3+" "+"Highest Sale"+" "+"-"*3)
+high_sale = new_sort[["Sales"]].max()
+print(high_sale)
 print("-"*40)
 
-# Calculating minimum salary
-print("-"*3+" "+"Minimum Salary"+" "+"-"*3)
-min_salary = new_sort[["Sales"]].min()
-print(min_salary)
+# Calculating minimum sales
+print("-"*3+" "+"Lowest Sale"+" "+"-"*3)
+low_sale = new_sort[["Sales"]].min()
+print(low_sale)
+print("-"*40)
+
+# Calculating Top Three sales
+print("-"*3+" "+"Top Three Sales"+" "+"-"*3)
+top_products = df.sort_values(by="Sales", ascending=False).head(3)
+print(top_products)
+print("-"*40)
+
+# Calculating Average sales
+print("-"*3+" "+"Average Sales"+" "+"-"*3)
+avg_sales = df["Sales"].mean()
+print(avg_sales)
+print("-"*40)
+
+# Shows information about the dataset and its structure
+print("DATASET INFORMATION")
+df.info()
+print("-"*40)
+
+# Checks data for missing values - Data Quality
+print("MISSING VALUES")
+print(df.isnull().sum())
+print("-"*40)
+
+# Adding a duplicate row
+duplicated_row = df.iloc[[0]]
+df = pd.concat([df, duplicated_row], ignore_index=True)
+
+# Checks for duplicate records
+print("DUPLICATED RECORDS")
+print(df.duplicated())
+print("-"*40)
+
+print("TOTAL DUPLICATE RECORDS")
+print(df.duplicated().sum())
+print("-"*40)
+
+print(df.duplicated(subset=["Product"]))
+print("-"*40)
+
+# Dropping Duplicates
+cleaned_df = df.drop_duplicates()
+print(cleaned_df)
+print("-"*40)
+
+print(len(cleaned_df))
+

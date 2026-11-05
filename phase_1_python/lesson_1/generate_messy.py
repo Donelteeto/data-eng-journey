@@ -12,26 +12,33 @@ data = {
 df = pd.DataFrame(data)
 print(df)
 print("-"*50)
+
+missing = df.isnull().sum()
+print(missing)
+print("-"*50)
+
 df = df.dropna(subset=["age"])
 print(df)
 print("-"*50)
+
 df = df[df["purchase_amount"] > 0]
 print(df)
+
 df["customer_name"] = df["customer_name"].str.strip()
 print("-"*50)
-def is_premium(purchase_amount):
+'''def is_premium(purchase_amount):
     if purchase_amount > 200:
         return True
     else:
-        return False
+        return False'''
 
-df["is_premium"] = df["purchase_amount"].apply(is_premium)
+df["is_premium"] = df["purchase_amount"].apply(lambda is_premium: is_premium > 200)
 print(df)
 print("-"*50)
 
-df.to_csv("clean_customer.csv", index=False)
+'''df.to_csv("clean_customer.csv", index=False)
 
 df = pd.read_csv("clean_customer.csv")
 print(df)
 #df = df.dropna(subset=["purchase_amount"])
-#print(df)
+#print(df)'''
