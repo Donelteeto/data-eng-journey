@@ -5,7 +5,7 @@ Hi, I'm Donelteeto. This repository tracks my learning path from zero to job-rea
 ## Progress
 
 - [x] Phase 0: Foundations - terminal, Git basics
-- [ ] Phase 1: Python
+- [x] Phase 1: Python
 - [ ] Phase 2: SQL
 - [ ] Phase 3: Big Data (Spark, Kafka)
 - [ ] Phase 4: Cloud (AWS)
